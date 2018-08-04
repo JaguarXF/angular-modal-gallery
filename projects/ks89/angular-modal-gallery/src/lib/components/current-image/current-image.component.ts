@@ -63,48 +63,58 @@ export class CurrentImageComponent extends AccessibleComponent implements OnInit
   /**
    * Object of type `InternalLibImage` that represent the visible image.
    */
-  @Input() currentImage: InternalLibImage;
+  @Input()
+  currentImage: InternalLibImage;
   /**
    * Array of `InternalLibImage` that represent the model of this library with all images,
    * thumbs and so on.
    */
-  @Input() images: InternalLibImage[];
+  @Input()
+  images: InternalLibImage[];
   /**
    * Boolean that it is true if the modal gallery is visible.
    * If yes, also this component should be visible.
    */
-  @Input() isOpen: boolean;
+  @Input()
+  isOpen: boolean;
   /**
    * Interface to configure current image in modal-gallery.
    * For instance you can disable navigation on click on current image (enabled by default).
    */
-  @Input() currentImageConfig: CurrentImageConfig;
+  @Input()
+  currentImageConfig: CurrentImageConfig;
   /**
    * Object of type `SlideConfig` to get `infinite sliding`.
    */
-  @Input() slideConfig: SlideConfig;
+  @Input()
+  slideConfig: SlideConfig;
   /**
    * Object of type `AccessibilityConfig` to init custom accessibility features.
    * For instance, it contains titles, alt texts, aria-labels and so on.
    */
-  @Input() accessibilityConfig: AccessibilityConfig;
+  @Input()
+  accessibilityConfig: AccessibilityConfig;
   /**
    * Object of type `KeyboardConfig` to assign custom keys to both ESC, RIGHT and LEFT keyboard's actions.
    */
-  @Input() keyboardConfig: KeyboardConfig;
+  @Input()
+  keyboardConfig: KeyboardConfig;
 
   /**
    * Output to emit an event when images are loaded. The payload contains an `ImageLoadEvent`.
    */
-  @Output() loadImage: EventEmitter<ImageLoadEvent> = new EventEmitter<ImageLoadEvent>();
+  @Output()
+  loadImage: EventEmitter<ImageLoadEvent> = new EventEmitter<ImageLoadEvent>();
   /**
    * Output to emit any changes of the current image. The payload contains an `ImageModalEvent`.
    */
-  @Output() changeImage: EventEmitter<ImageModalEvent> = new EventEmitter<ImageModalEvent>();
+  @Output()
+  changeImage: EventEmitter<ImageModalEvent> = new EventEmitter<ImageModalEvent>();
   /**
    * Output to emit an event when the modal gallery is closed. The payload contains an `ImageModalEvent`.
    */
-  @Output() close: EventEmitter<ImageModalEvent> = new EventEmitter<ImageModalEvent>();
+  @Output()
+  close: EventEmitter<ImageModalEvent> = new EventEmitter<ImageModalEvent>();
 
   /**
    * Enum of type `Action` that represents a mouse click on a button.

@@ -49,30 +49,36 @@ export class PreviewsComponent extends AccessibleComponent implements OnInit, On
   /**
    * Object of type `InternalLibImage` that represent the visible image.
    */
-  @Input() currentImage: InternalLibImage;
+  @Input()
+  currentImage: InternalLibImage;
   /**
    * Array of `InternalLibImage` that represent the model of this library with all images,
    * thumbs and so on.
    */
-  @Input() images: InternalLibImage[];
+  @Input()
+  images: InternalLibImage[];
   /**
    * Object of type `SlideConfig` to get `infinite sliding`.
    */
-  @Input() slideConfig: SlideConfig;
+  @Input()
+  slideConfig: SlideConfig;
   /**
    * Object of type `PreviewConfig` to init PreviewsComponent's features.
    * For instance, it contains a param to show/hide this component, sizes.
    */
-  @Input() previewConfig: PreviewConfig;
+  @Input()
+  previewConfig: PreviewConfig;
   /**
    * Object of type `AccessibilityConfig` to init custom accessibility features.
    * For instance, it contains titles, alt texts, aria-labels and so on.
    */
-  @Input() accessibilityConfig: AccessibilityConfig;
+  @Input()
+  accessibilityConfig: AccessibilityConfig;
   /**
    * Output to emit the clicked preview. The payload contains the `InternalLibImage` associated to the clicked preview.
    */
-  @Output() clickPreview: EventEmitter<InternalLibImage> = new EventEmitter<InternalLibImage>();
+  @Output()
+  clickPreview: EventEmitter<InternalLibImage> = new EventEmitter<InternalLibImage>();
 
   /**
    * Array of `InternalLibImage` exposed to the template. This field is initialized
