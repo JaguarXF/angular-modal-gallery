@@ -439,10 +439,11 @@
   <h3>C14 - (id=52) - Advanced demo - after 3 seconds it closes modal gallery automatically with galleryService's close method</h3>
   <p>Attention: please check the console to understand what it's happening!</p>
   <br>
-  <ks-modal-gallery [id]="52" [modalImages]="images" (show)="onShowAutoCloseExample($event, 51)"></ks-modal-gallery>
+  <ks-modal-gallery [id]="52" [modalImages]="images" (show)="onShowAutoCloseExample($event, 52)"></ks-modal-gallery>
 </section>
 
 <section>
+<<<<<<< HEAD
   <h3>D1 - (id=53) - Other demo - base64 images</h3>
   <br>
   <ks-modal-gallery [id]="53" [modalImages]="imagesBase64"></ks-modal-gallery>
@@ -467,6 +468,18 @@
   <h3>D4 - (id=56) - Other demo - load images already rotated</h3>
   <br>
   <ks-modal-gallery [id]="56" [modalImages]="imagesRotated"></ks-modal-gallery>
+=======
+  <h3>C15 - (id=53) - Advanced demo - after 3 seconds navigate to image 0 and go next every other second</h3>
+  <p>Attention: please check the console to understand what it's happening!</p>
+  <br>
+  <ks-modal-gallery [id]="53" [modalImages]="images" (show)="onShowAutoNavigateExample($event, 53)"></ks-modal-gallery>
+</section>
+
+<section>
+  <h3>C16 - (id=54) - Advanced demo - load images already rotated</h3>
+  <br>
+  <ks-modal-gallery [id]="54" [modalImages]="imagesRotated"></ks-modal-gallery>
+>>>>>>> feat(): add new navigate method into galleryService (with an example) + trying to fix image rotation
 </section>
 
 <br><br>
