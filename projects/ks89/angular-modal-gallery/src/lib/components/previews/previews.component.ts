@@ -183,6 +183,10 @@ export class PreviewsComponent extends AccessibleComponent implements OnInit, On
         console.error('Cannot get previous and current image indexes in previews');
         throw err;
       }
+
+      // apply a formula to get a values to be used to decide if go next, return back or stay without doing anything
+      const calc = Math.floor((this.end - this.start) / 2) + this.start;
+
       if (prevIndex === this.images.length - 1 && currentIndex === 0) {
         // first image
         this.setBeginningIndexesPreviews();
@@ -197,11 +201,21 @@ export class PreviewsComponent extends AccessibleComponent implements OnInit, On
         return;
       }
 
-      // otherwise manage standard scenarios
-      if (prevIndex > currentIndex) {
-        this.previous();
-      } else if (prevIndex < currentIndex) {
-        this.next();
+      if (this.configPreview.number % 2 === 0) {
+        if (calc > currentIndex) {
+          this.previous();
+        } else {
+          this.next();
+        }
+      } else {
+        if (calc > currentIndex) {
+          this.previous();
+        }
+        if (calc < currentIndex) {
+          this.next();
+        }
+        if (calc === currentIndex) {
+        }
       }
     }
   }
@@ -346,6 +360,6 @@ export class PreviewsComponent extends AccessibleComponent implements OnInit, On
    * @returns boolean if true block sliding, otherwise not
    */
   private isPreventSliding(boundaryIndex: number): boolean {
-    return !!this.slideConfig && this.slideConfig.infinite === false && getIndex(this.currentImage, this.previews) === boundaryIndex;
+    return !!this.slideConfig && this.slideConfig.infinite === false && getIndex(this.currentImage, this.images) === boundaryIndex;
   }
 }
