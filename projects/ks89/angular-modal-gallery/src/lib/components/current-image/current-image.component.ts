@@ -163,7 +163,7 @@ export class CurrentImageComponent extends AccessibleComponent implements OnInit
    * In particular, it's called only one time!!!
    */
   ngOnInit() {
-    const defaultLoading: LoadingConfig = {enable: true, type: LoadingType.STANDARD};
+    const defaultLoading: LoadingConfig = { enable: true, type: LoadingType.STANDARD };
     const defaultDescriptionStyle: DescriptionStyle = {
       bgColor: 'rgba(0, 0, 0, .5)',
       textColor: 'white',
